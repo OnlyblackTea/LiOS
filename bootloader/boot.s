@@ -2,7 +2,7 @@
     .globl _entry
 _entry:
     la sp, boot_stack_top
-    call main
+    call kernel_main
 
     .section .bss.stack 
     .globl boot_stack 

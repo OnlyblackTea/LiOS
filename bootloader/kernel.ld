@@ -41,7 +41,7 @@ SECTIONS
         *(.sbss .sbss.*)
     }
     
-    . = ALIGN(4K)
+    . = ALIGN(4K);
     e_bss = .;
     ekernel = .;
 
