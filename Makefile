@@ -1,9 +1,7 @@
 .PHONY: clean
 all: build
 
-TERM = wezterm
-
-SRC_DIRS = bootloader 
+SRC_DIRS = bootloader drivers
 
 ARCH = riscv64-elf-
 GDB = $(ARCH)gdb
@@ -64,12 +62,11 @@ clean:
 	rm -rf $(PREFIX)
 
 BOARD ?= qemu
-SBI   ?= opensbi
+SBI   ?= rustsbi
 BOOTLOADER := ./rustsbi-qemu-debug/rustsbi-qemu
 
 QEMU = qemu-system-riscv64
-QEMUDBGFLAGS  = -S -gdb tcp::2002 
-QEMUGDBFLAGS = -ex "target remote 127.0.0.1:2002"
+QEMUDBGFLAGS  = -S -gdb tcp::2002
 QEMUOPTS = \
 	-m 256M \
 	-nographic \
