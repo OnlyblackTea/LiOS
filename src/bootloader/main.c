@@ -1,4 +1,4 @@
-#include "main.h"
+#include "headers.h"
 
 int kernel_main()
 {
