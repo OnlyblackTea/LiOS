@@ -1,3 +1,4 @@
+#include "sbi.h"
 #include "print.h"
 #include "uart.h"
 
@@ -11,4 +12,10 @@ void _kputs(char *s)
 {
   while(*s)
     _kputc(*s++);
+}
+
+void ecall_puts(char *s)
+{
+  while(*s)
+    ecall_putchar(*s++);
 }

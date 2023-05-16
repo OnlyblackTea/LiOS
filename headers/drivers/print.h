@@ -4,5 +4,6 @@
 
 int _kputc(char ch);
 void _kputs(char *s);
+void ecall_puts(char *s);
 
 #endif
